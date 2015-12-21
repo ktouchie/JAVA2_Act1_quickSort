@@ -5,6 +5,7 @@ class qsort {
         
         int[] tab = {5,9,4,1,2,7,3,8,6,0};
         partition(tab, 0, (tab.length-1));
+        System.out.println(Arrays.toString(tab));
         
         
     }
@@ -31,6 +32,9 @@ class qsort {
                     swap(A, i, k);
                 }
             }
+            
+            System.out.println(i);
+            System.out.println(k);
         }
         
     }
