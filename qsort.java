@@ -4,13 +4,14 @@ class qsort {
 	public static void main(String[] args) {
         
         int[] tab = {5,9,4,1,2,7,3,8,6,0};
-        partition(tab, 0, (tab.length-1));
+        quickSort(tab, 0, (tab.length-1));
         System.out.println(Arrays.toString(tab));
         
         
     }
     
-    public static void partition(int A[], int start, int end) {
+    public static void quickSort(int A[], int start, int end) {
+        
         int i = start;  //first position of the array
         int k = end;    //last position of the array
         
@@ -33,13 +34,15 @@ class qsort {
                 }
             }
             
-            System.out.println(i);
-            System.out.println(k);
+            swap(A, start, k);
+            quickSort(A, start, k-1);
+            quickSort(A, k+1, end);
         }
         
     }
     
     public static void swap(int array[], int p, int q) {
+        
         int temp = array[p];
         array[p] = array[q];
         array[q] = temp;
